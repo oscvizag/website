@@ -1,0 +1,21 @@
+.un {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  button {
+    padding: 10px;
+    border: 3px solid rgb(66, 66, 66);
+    border-radius: 5px;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

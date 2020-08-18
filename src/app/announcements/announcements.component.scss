@@ -1,0 +1,42 @@
+.announcements {
+  margin: auto;
+  width: 100%;
+  margin-top: 20px;
+
+  .announcement {
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgb(192, 192, 192);
+
+    .header {
+      display: flex;
+      align-items: center;
+      .pic {
+        img {
+          width: 50px;
+          height: auto;
+        }
+      }
+
+      .title {
+        margin: 10px;
+      }
+    }
+
+    .details {
+      margin: 10px;
+
+      .item {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+
+        p {
+          color: rgb(65, 65, 65);
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -121,8 +121,16 @@
               "devServerTarget": "website:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "website"
+    }
+  },
+  "defaultProject": "website",
+  "cli": {
+    "analytics": "3d24dab6-28f3-4a14-9247-834f91501906"
+  }
 }

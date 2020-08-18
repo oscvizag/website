@@ -1,0 +1,22 @@
+<div class="announcements">
+  <div class="announcement" *ngFor="let item of announcements">
+    <div class="header">
+      <div class="pic">
+        <img src="{{ getLink(item.host) }}" />
+      </div>
+      <div class="title">
+        <h1>{{ item.host }}</h1>
+      </div>
+    </div>
+    <hr />
+    <div class="details">
+      <div class="item description">
+        <strong>{{ item.description }}</strong>
+      </div>
+      <div class="item">
+        <p>Link :</p>
+        <a target="_blank" href="{{ item.url }}">{{ item.url }}</a>
+      </div>
+    </div>
+  </div>
+</div>
