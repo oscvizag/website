@@ -1,5 +1,29 @@
-<div class="nav-bar">
-  <div class="title" routerLink="/">
-    <h2>OSC Community</h2>
+<div class="page">
+  <div class="nav-bar">
+    <div class="title">
+      <h1>OSC</h1>
+    </div>
+    <div class="items">
+      <div class="item" *ngFor="let item of items">
+        {{ item }}
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <img src="assets/complete_darkmode.png" alt="logo" />
+
+    <div class="con">
+      <div class="fancy-title">
+        <h1>Divided By Domains<br />United By OSC</h1>
+      </div>
+      <div class="sub">
+        For latest and greatest announcements join our Discord Server.
+      </div>
+      <div class="bt">
+        <button (click)="go()" mat-flat-button>
+          <img src="assets/discord.png" />
+        </button>
+      </div>
+    </div>
   </div>
 </div>
