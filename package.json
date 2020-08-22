@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "go":"ng build --prod && cd dist firebase deploy && cd .."
+    "go":"ng build --prod && cd dist && firebase deploy && cd .."
   },
   "private": true,
   "dependencies": {

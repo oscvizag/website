@@ -70,7 +70,6 @@
   margin: auto;
   padding: 20px;
   width: 10em;
-  height: max-content;
 }
 .card-content .sub .communities .two img {
   width: 15em;
@@ -124,8 +123,7 @@
     width: 80%;
   }
   .card-content .sub .communities .row img {
-    height: 60px;
-    width: auto;
+    width: 4em;
   }
   .card-content .sub .communities .two img {
     width: 4em;
