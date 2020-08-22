@@ -1,0 +1,14 @@
+.create {
+  width: 80%;
+  margin: 20px;
+  margin: auto;
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    .field {
+      margin: 20px;
+      padding: 10px;
+    }
+  }
+}

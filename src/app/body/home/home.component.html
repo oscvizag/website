@@ -1,0 +1,90 @@
+<div class="card-content">
+  <div class="title">
+    <h1>For Students , By Students</h1>
+  </div>
+
+  <div class="sub card">
+    <h3 class="title" id="about">
+      " We are students of various communities as one<br />
+      to help Students and developers like us as one<br />
+      to grow as individual and community "
+    </h3>
+  </div>
+
+  <div class="skills card">
+    <div
+      class="skill"
+      *ngFor="let skill of skills"
+      [style.background-image]="'url(' + skill.link + ')'"
+    >
+      <div class="skill-under">
+        <p>{{ skill.name }}</p>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="sub card">
+    <h3 class="title">
+      " Communities we are with "
+    </h3>
+    <div class="communities">
+      <div class="row">
+        <img src="assets/microsoft.png" />
+        <img src="assets/he.png" />
+        <img src="assets/cb.png" />
+      </div>
+      <div class="row two">
+        <img src="assets/hackclub.png" />
+        <img src="assets/codechef.png" />
+        <img src="assets/cn.png" />
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="about card">
+    <h3 class="title">
+      " Get To Us "
+    </h3>
+    <div class="contact" id="contact">
+      <img class="boo" src="assets/team.gif" />
+      <form class="form" [formGroup]="contactForm">
+        <div>
+          <mat-form-field appearance="outline" class="field">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="nameControl" [(ngModel)]="name" />
+            <mat-hint>Your Sweet Name</mat-hint>
+            <mat-error> Name is <strong>required</strong> </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              formControlName="emailControl"
+              placeholder="Ex. pat@example.com"
+              [(ngModel)]="email"
+            />
+            <mat-error> Enter a valid Email </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Your Message</mat-label>
+          <textarea
+            matInput
+            formControlName="messageControl"
+            [(ngModel)]="message"
+          ></textarea>
+          <mat-error> Message is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <button
+          class="field"
+          [disabled]="!contactForm.valid"
+          (click)="send()"
+          mat-flat-button
+          color="primary"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

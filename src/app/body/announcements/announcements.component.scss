@@ -1,0 +1,23 @@
+.announcements {
+  margin: 50px;
+  margin-top: 0px;
+  .card {
+    padding: 30px;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    div {
+      background-size: cover;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .announcements {
+    .card {
+      width: auto;
+      margin-bottom: 30px;
+    }
+  }
+}

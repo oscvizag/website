@@ -1,0 +1,104 @@
+<div class="create" id="create">
+  <form [formGroup]="formControl">
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Title</mat-label>
+      <input [(ngModel)]="name" matInput formControlName="name" />
+      <mat-hint>Enter Competition Title</mat-hint>
+      <mat-error> Title is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="field" id="go-pokemon">
+      <mat-label>Competition URL</mat-label>
+      <input [(ngModel)]="url" matInput formControlName="url" />
+      <mat-hint>Enter Competition Url</mat-hint>
+      <mat-error> Competition URL is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Banner URL</mat-label>
+      <input
+        matInput
+        [(ngModel)]="bannerurl"
+        formControlName="bannerurl"
+        placeholder="Ex: https://hackerearth.com"
+      />
+      <mat-hint>Enter Banner Url</mat-hint>
+      <mat-error> Banner URL is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Description</mat-label>
+      <textarea [(ngModel)]="des" matInput formControlName="des"></textarea>
+      <mat-hint>Enter Description</mat-hint>
+      <mat-error> Description URL is <strong>required</strong> </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Host</mat-label>
+      <mat-select [(ngModel)]="host" formControlName="host">
+        <mat-option value="Hacker Earth">Hacker Earth</mat-option>
+      </mat-select>
+      <mat-error>You must make a selection</mat-error>
+    </mat-form-field>
+    <!-- authors -->
+    <mat-form-field class="field">
+      <mat-chip-list #chipList aria-label="Authors">
+        <mat-chip
+          *ngFor="let author of authors"
+          [selectable]="true"
+          [removable]="true"
+          (removed)="remove(author)"
+        >
+          {{ author.name }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <input
+          matInput
+          placeholder="Seperate authors by pressing COMMA(or)ENTER"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)"
+          formControlName="author"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+    <!-- authors -->
+    <div>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Choose Start date</mat-label>
+        <input
+          [(ngModel)]="startdate"
+          formControlName="startdate"
+          matInput
+          [matDatepicker]="startpicker"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="startpicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #startpicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Choose End date</mat-label>
+        <input
+          [(ngModel)]="enddate"
+          formControlName="enddate"
+          matInput
+          [matDatepicker]="endpicker"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endpicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endpicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!formControl.valid"
+      class="field"
+      (click)="go()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

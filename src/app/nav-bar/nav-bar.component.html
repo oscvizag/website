@@ -1,10 +1,12 @@
 <div class="page">
-  <div class="nav-bar">
+  <div class="nav-bar" id="nav">
     <div class="title">
+      <mat-icon (click)="plateState = !plateState">menu</mat-icon>
       <h1>OSC</h1>
     </div>
-    <div class="items">
-      <div class="item" *ngFor="let item of items">
+    <div class="items" [@plate]="!plateState ? 'open' : 'none'">
+      <mat-icon (click)="plateState = !plateState">keyboard_backspace</mat-icon>
+      <div class="item" *ngFor="let item of items" (click)="navigate(item)">
         {{ item }}
       </div>
     </div>

@@ -1,0 +1,41 @@
+<div class="announcements">
+  <h1>Announcements</h1>
+  <br />
+  <br />
+  <mat-tab-group id="tab">
+    <mat-tab label="{{ tab.name }}" *ngFor="let tab of data">
+      <mat-card class="card" *ngFor="let item of tab.links">
+        <mat-card-header>
+          <div
+            mat-card-avatar
+            [style.background-image]="'url(' + getLink(item.host) + ')'"
+          ></div>
+          <mat-card-title
+            ><h3>{{ item.name }}</h3></mat-card-title
+          >
+          <mat-card-subtitle>{{ item.host }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ item.bannerurl }}" alt="banner" />
+        <mat-card-content>
+          <p>
+            {{ item.description }}
+          </p>
+          <strong>Authors:</strong>
+          <div *ngFor="let author of item.authors">
+            <span>{{ author.name }}</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-flat-button
+            [disabled]="tab.name == 'Live' ? false : true"
+            color="primary"
+            (click)="navigate(item.url)"
+          >
+            JOIN
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+</div>
