@@ -66,6 +66,9 @@ export class HomeComponent implements OnInit {
     this._snackBar.open('Done', 'OK', {
       duration: 2000,
     });
+    this.email='';
+    this.name='';
+    this.message='';
     document.getElementById('nav').scrollIntoView({ behavior: 'smooth' });
   }
 }
