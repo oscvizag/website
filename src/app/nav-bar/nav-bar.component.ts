@@ -7,6 +7,7 @@ import {
   style,
   state,
 } from '@angular/animations';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'nav-bar',
@@ -32,11 +33,19 @@ import {
   ],
 })
 export class NavBarComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private fire: AngularFirestore) {
+    this.fire
+      .doc('config/host-logo')
+      .get()
+      .subscribe((doc) => {
+        this.links = doc.data();
+      });
+  }
   plateState = false;
+  links;
 
   go() {
-    window.open('https://discord.com/invite/TPXRk5h');
+    window.open(this.links.discord);
   }
 
   items = ['Home', 'Announcements', 'Contact', 'About'];
